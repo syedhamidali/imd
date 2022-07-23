@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data" href="GPM_IMD_MATCH-Copy1.html" />
+    <link rel="prev" title="Welcome! Let’s learn to handle IMD data" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,6 +90,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Handlind IMD data</h1>
@@ -106,7 +113,17 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   How to handle IMD radar data efficiently?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GPM_IMD_MATCH-Copy1.html">
+   Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mymarkdown.html">
    Here’s my sample title
@@ -443,6 +460,16 @@ Zenodo. https://doi.org/10.5281/zenodo.5574160
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileExistsError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;/Users/rizvi/Downloads/IMD500&#39;</span><span class="p">)</span>
+
+<span class="ne">FileExistsError</span>: [Errno 17] File exists: &#39;/Users/rizvi/Downloads/IMD500&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -461,7 +488,82 @@ Zenodo. https://doi.org/10.5281/zenodo.5574160
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MUM200829003956-IMD.nc&#39;,
+ &#39;MUM200829003956-IMD.nc.1&#39;,
+ &#39;MUM200829004956-IMD.nc&#39;,
+ &#39;MUM200829004956-IMD.nc.1&#39;,
+ &#39;MUM200829005956-IMD.nc&#39;,
+ &#39;MUM200829005956-IMD.nc.1&#39;,
+ &#39;MUM200829010956-IMD.nc&#39;,
+ &#39;MUM200829010956-IMD.nc.1&#39;,
+ &#39;MUM200829013955-IMD.nc&#39;,
+ &#39;MUM200829013955-IMD.nc.1&#39;,
+ &#39;MUM200829014956-IMD.nc&#39;,
+ &#39;MUM200829014956-IMD.nc.1&#39;,
+ &#39;MUM200829015957-IMD.nc&#39;,
+ &#39;MUM200829015957-IMD.nc.1&#39;,
+ &#39;MUM200829025959-IMD.nc&#39;,
+ &#39;MUM200829025959-IMD.nc.1&#39;,
+ &#39;MUM200829032959-IMD.nc&#39;,
+ &#39;MUM200829032959-IMD.nc.1&#39;,
+ &#39;MUM200829034959-IMD.nc&#39;,
+ &#39;MUM200829034959-IMD.nc.1&#39;,
+ &#39;MUM200829043959-IMD.nc&#39;,
+ &#39;MUM200829043959-IMD.nc.1&#39;,
+ &#39;MUM200829070957-IMD.nc&#39;,
+ &#39;MUM200829070957-IMD.nc.1&#39;,
+ &#39;MUM200829074954-IMD.nc&#39;,
+ &#39;MUM200829074954-IMD.nc.1&#39;,
+ &#39;MUM200829075957-IMD.nc&#39;,
+ &#39;MUM200829075957-IMD.nc.1&#39;,
+ &#39;MUM200829092957-IMD.nc&#39;,
+ &#39;MUM200829092957-IMD.nc.1&#39;,
+ &#39;MUM200829101957-IMD.nc&#39;,
+ &#39;MUM200829101957-IMD.nc.1&#39;,
+ &#39;MUM200829115427-IMD.nc&#39;,
+ &#39;MUM200829115427-IMD.nc.1&#39;,
+ &#39;MUM200829123427-IMD.nc&#39;,
+ &#39;MUM200829123427-IMD.nc.1&#39;,
+ &#39;MUM200829130428-IMD.nc&#39;,
+ &#39;MUM200829130428-IMD.nc.1&#39;,
+ &#39;MUM200829144429-IMD.nc&#39;,
+ &#39;MUM200829144429-IMD.nc.1&#39;,
+ &#39;MUM200829163431-IMD.nc&#39;,
+ &#39;MUM200829163431-IMD.nc.1&#39;,
+ &#39;MUM200829170430-IMD.nc&#39;,
+ &#39;MUM200829170430-IMD.nc.1&#39;,
+ &#39;MUM200829171431-IMD.nc&#39;,
+ &#39;MUM200829171431-IMD.nc.1&#39;,
+ &#39;MUM200829172431-IMD.nc&#39;,
+ &#39;MUM200829172431-IMD.nc.1&#39;,
+ &#39;MUM200829173431-IMD.nc&#39;,
+ &#39;MUM200829173431-IMD.nc.1&#39;,
+ &#39;MUM200829182427-IMD.nc&#39;,
+ &#39;MUM200829182427-IMD.nc.1&#39;,
+ &#39;MUM200829190427-IMD.nc&#39;,
+ &#39;MUM200829190427-IMD.nc.1&#39;,
+ &#39;MUM200829193428-IMD.nc&#39;,
+ &#39;MUM200829193428-IMD.nc.1&#39;,
+ &#39;MUM200829194428-IMD.nc&#39;,
+ &#39;MUM200829194428-IMD.nc.1&#39;,
+ &#39;MUM200829195427-IMD.nc&#39;,
+ &#39;MUM200829195427-IMD.nc.1&#39;,
+ &#39;MUM200829202427-IMD.nc&#39;,
+ &#39;MUM200829202427-IMD.nc.1&#39;,
+ &#39;MUM200829205426-IMD.nc&#39;,
+ &#39;MUM200829205426-IMD.nc.1&#39;,
+ &#39;MUM200829213431-IMD.nc&#39;,
+ &#39;MUM200829213431-IMD.nc.1&#39;,
+ &#39;MUM200829214431-IMD.nc&#39;,
+ &#39;MUM200829214431-IMD.nc.1&#39;,
+ &#39;MUM200829215431-IMD.nc&#39;,
+ &#39;MUM200829215431-IMD.nc.1&#39;,
+ &#39;MUM200829223430-IMD.nc&#39;,
+ &#39;MUM200829223430-IMD.nc.1&#39;,
+ &#39;MUM200829232428-IMD.nc&#39;,
+ &#39;MUM200829232428-IMD.nc.1&#39;,
+ &#39;MUM200829233428-IMD.nc&#39;,
+ &#39;MUM200829233428-IMD.nc.1&#39;]
 </pre></div>
 </div>
 </div>
@@ -485,6 +587,86 @@ Zenodo. https://doi.org/10.5281/zenodo.5574160
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Moved: MUM200829003956-IMD.nc
+Moved: MUM200829003956-IMD.nc.1
+Moved: MUM200829004956-IMD.nc
+Moved: MUM200829004956-IMD.nc.1
+Moved: MUM200829005956-IMD.nc
+Moved: MUM200829005956-IMD.nc.1
+Moved: MUM200829010956-IMD.nc
+Moved: MUM200829010956-IMD.nc.1
+Moved: MUM200829013955-IMD.nc
+Moved: MUM200829013955-IMD.nc.1
+Moved: MUM200829014956-IMD.nc
+Moved: MUM200829014956-IMD.nc.1
+Moved: MUM200829015957-IMD.nc
+Moved: MUM200829015957-IMD.nc.1
+Moved: MUM200829025959-IMD.nc
+Moved: MUM200829025959-IMD.nc.1
+Moved: MUM200829032959-IMD.nc
+Moved: MUM200829032959-IMD.nc.1
+Moved: MUM200829034959-IMD.nc
+Moved: MUM200829034959-IMD.nc.1
+Moved: MUM200829043959-IMD.nc
+Moved: MUM200829043959-IMD.nc.1
+Moved: MUM200829070957-IMD.nc
+Moved: MUM200829070957-IMD.nc.1
+Moved: MUM200829074954-IMD.nc
+Moved: MUM200829074954-IMD.nc.1
+Moved: MUM200829075957-IMD.nc
+Moved: MUM200829075957-IMD.nc.1
+Moved: MUM200829092957-IMD.nc
+Moved: MUM200829092957-IMD.nc.1
+Moved: MUM200829101957-IMD.nc
+Moved: MUM200829101957-IMD.nc.1
+Moved: MUM200829115427-IMD.nc
+Moved: MUM200829115427-IMD.nc.1
+Moved: MUM200829123427-IMD.nc
+Moved: MUM200829123427-IMD.nc.1
+Moved: MUM200829130428-IMD.nc
+Moved: MUM200829130428-IMD.nc.1
+Moved: MUM200829144429-IMD.nc
+Moved: MUM200829144429-IMD.nc.1
+Moved: MUM200829163431-IMD.nc
+Moved: MUM200829163431-IMD.nc.1
+Moved: MUM200829170430-IMD.nc
+Moved: MUM200829170430-IMD.nc.1
+Moved: MUM200829171431-IMD.nc
+Moved: MUM200829171431-IMD.nc.1
+Moved: MUM200829172431-IMD.nc
+Moved: MUM200829172431-IMD.nc.1
+Moved: MUM200829173431-IMD.nc
+Moved: MUM200829173431-IMD.nc.1
+Moved: MUM200829182427-IMD.nc
+Moved: MUM200829182427-IMD.nc.1
+Moved: MUM200829190427-IMD.nc
+Moved: MUM200829190427-IMD.nc.1
+Moved: MUM200829193428-IMD.nc
+Moved: MUM200829193428-IMD.nc.1
+Moved: MUM200829194428-IMD.nc
+Moved: MUM200829194428-IMD.nc.1
+Moved: MUM200829195427-IMD.nc
+Moved: MUM200829195427-IMD.nc.1
+Moved: MUM200829202427-IMD.nc
+Moved: MUM200829202427-IMD.nc.1
+Moved: MUM200829205426-IMD.nc
+Moved: MUM200829205426-IMD.nc.1
+Moved: MUM200829213431-IMD.nc
+Moved: MUM200829213431-IMD.nc.1
+Moved: MUM200829214431-IMD.nc
+Moved: MUM200829214431-IMD.nc.1
+Moved: MUM200829215431-IMD.nc
+Moved: MUM200829215431-IMD.nc.1
+Moved: MUM200829223430-IMD.nc
+Moved: MUM200829223430-IMD.nc.1
+Moved: MUM200829232428-IMD.nc
+Moved: MUM200829232428-IMD.nc.1
+Moved: MUM200829233428-IMD.nc
+Moved: MUM200829233428-IMD.nc.1
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -496,28 +678,6 @@ Zenodo. https://doi.org/10.5281/zenodo.5574160
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Importing Libraries
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>## You are using the Python ARM Radar Toolkit (Py-ART), an open source
-## library for working with weather radar data. Py-ART is partly
-## supported by the U.S. Department of Energy as part of the Atmospheric
-## Radiation Measurement (ARM) Climate Research Facility, an Office of
-## Science user facility.
-##
-## If you use this software to prepare a publication, please cite:
-##
-##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;frozen importlib._bootstrap&gt;:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Importing Libraries Done
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -526,11 +686,11 @@ Zenodo. https://doi.org/10.5281/zenodo.5574160
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of files:  0
-Total number of files will be created:  0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of files:  950
+Total number of files will be created:  95
 Merging all scans in one file
 Data merging done 
-Total Time Elapsed:  0:00:13.577012
+Total Time Elapsed:  0:57:25.019374
 </pre></div>
 </div>
 </div>
@@ -586,23 +746,6 @@ Total Time Elapsed:  0:00:13.577012
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rad_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">output_grid_folder</span><span class="o">+</span><span class="s2">&quot;/*&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="nn">Input In [18],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rad_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">output_grid_folder</span><span class="o">+</span><span class="s2">&quot;/*&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/syed/lib/python3.10/site-packages/xarray/backends/api.py:873,</span> in <span class="ni">open_mfdataset</span><span class="nt">(paths, chunks, concat_dim, compat, preprocess, engine, data_vars, coords, combine, parallel, join, attrs_file, combine_attrs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">)</span> <span class="k">else</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">paths</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">873</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">&quot;no files to open&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span> <span class="k">if</span> <span class="n">combine</span> <span class="o">==</span> <span class="s2">&quot;nested&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">concat_dim</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">DataArray</span><span class="p">))</span> <span class="ow">or</span> <span class="n">concat_dim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="ne">OSError</span>: no files to open
 </pre></div>
 </div>
 </div>
@@ -663,6 +806,20 @@ Total Time Elapsed:  0:00:13.577012
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome! Let’s learn to handle IMD data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="GPM_IMD_MATCH-Copy1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
