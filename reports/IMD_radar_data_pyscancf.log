@@ -17,14 +17,21 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-os.mkdir('/Users/rizvi/Downloads/IMD500')
+rad_ds = xr.open_mfdataset(output_grid_folder+"/*")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mFileExistsError[0m                           Traceback (most recent call last)
-Input [0;32mIn [7][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [43mos[49m[38;5;241;43m.[39;49m[43mmkdir[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m/Users/rizvi/Downloads/IMD500[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[0;31mOSError[0m                                   Traceback (most recent call last)
+Input [0;32mIn [18][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m rad_ds [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_mfdataset[49m[43m([49m[43moutput_grid_folder[49m[38;5;241;43m+[39;49m[38;5;124;43m"[39;49m[38;5;124;43m/*[39;49m[38;5;124;43m"[39;49m[43m)[49m
 
-[0;31mFileExistsError[0m: [Errno 17] File exists: '/Users/rizvi/Downloads/IMD500'
-FileExistsError: [Errno 17] File exists: '/Users/rizvi/Downloads/IMD500'
+File [0;32m~/miniconda3/envs/syed/lib/python3.10/site-packages/xarray/backends/api.py:873[0m, in [0;36mopen_mfdataset[0;34m(paths, chunks, concat_dim, compat, preprocess, engine, data_vars, coords, combine, parallel, join, attrs_file, combine_attrs, **kwargs)[0m
+[1;32m    870[0m     paths [38;5;241m=[39m [os[38;5;241m.[39mfspath(p) [38;5;28;01mif[39;00m [38;5;28misinstance[39m(p, os[38;5;241m.[39mPathLike) [38;5;28;01melse[39;00m p [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]
+[1;32m    872[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m paths:
+[0;32m--> 873[0m     [38;5;28;01mraise[39;00m [38;5;167;01mOSError[39;00m([38;5;124m"[39m[38;5;124mno files to open[39m[38;5;124m"[39m)
+[1;32m    875[0m [38;5;28;01mif[39;00m combine [38;5;241m==[39m [38;5;124m"[39m[38;5;124mnested[39m[38;5;124m"[39m:
+[1;32m    876[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(concat_dim, ([38;5;28mstr[39m, DataArray)) [38;5;129;01mor[39;00m concat_dim [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+
+[0;31mOSError[0m: no files to open
+OSError: no files to open
 
