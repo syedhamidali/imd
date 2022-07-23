@@ -77,7 +77,7 @@ import shutil
 os.mkdir('/Users/rizvi/Downloads/IMD500')
 
 
-# In[63]:
+# In[8]:
 
 
 fmv = []
@@ -86,13 +86,13 @@ for file in file500:
     fmv.append(file.split("/")[-1])
 
 
-# In[64]:
+# In[9]:
 
 
 fmv
 
 
-# In[65]:
+# In[10]:
 
 
 import shutil
@@ -119,13 +119,13 @@ for file in files_to_move:
 
 # ### Now we have only short range ppis in the "MUM200829IMD" directory and we will convert these files to cfradial files by using pyscancf
 
-# In[66]:
+# In[11]:
 
 
 import pyscancf.pyscancf as pcf
 
 
-# In[67]:
+# In[12]:
 
 
 pcf.cfrad("../MUM200829IMD/",output_dir='../akki/',)
@@ -133,32 +133,32 @@ pcf.cfrad("../MUM200829IMD/",output_dir='../akki/',)
 
 # ### Now that cfradial files are being created, we shall convert those files further to gridded datasets
 
-# In[68]:
+# In[13]:
 
 
 import pyart
 
 
-# In[71]:
+# In[14]:
 
 
 cf_files = sorted(glob.glob("pol*nc")) # loading cfradial data
 
 
-# In[183]:
+# In[15]:
 
 
 # creating directory for gridded files, which we are going to create by converting cfradial or polar data
 os.mkdir("/Users/rizvi/Downloads/outgrid")
 
 
-# In[184]:
+# In[16]:
 
 
 output_grid_folder = "/Users/rizvi/Downloads/outgrid/"
 
 
-# In[205]:
+# In[17]:
 
 
 for file in cf_files[0:10]:
@@ -184,7 +184,7 @@ for file in cf_files[0:10]:
 
 # ### test output grid files
 
-# In[206]:
+# In[18]:
 
 
 rad_ds = xr.open_mfdataset(output_grid_folder+"/*")

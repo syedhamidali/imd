@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Handling IMD data</title>
+    <title>How to plot any radar data &#8212; Handling IMD data</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data" href="GPM_IMD_MATCH-Copy1.html" />
-    <link rel="prev" title="How to handle IMD radar data efficiently?" href="IMD_radar_data_pyscancf.html" />
+    <link rel="next" title="Here’s my sample title" href="mymarkdown.html" />
+    <link rel="prev" title="Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data" href="GPM_IMD_MATCH-Copy1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="IMD_radar_data_pyscancf.html">
    How to handle IMD radar data efficiently?
@@ -122,6 +122,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="GPM_IMD_MATCH-Copy1.html">
    Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   How to plot any radar data
   </a>
  </li>
  <li class="toctree-l1">
@@ -268,50 +273,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>How to plot any radar data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -319,7 +297,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><strong><em>Step 1:</em> Import necessary libraries</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-plot-any-radar-data">
+<h1>How to plot any radar data<a class="headerlink" href="#how-to-plot-any-radar-data" title="Permalink to this headline">#</a></h1>
+<p><strong><em>Step 1:</em> Import necessary libraries</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -915,7 +895,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/radar_test_plot_11_0.png" src="_images/radar_test_plot_11_0.png" />
+<img alt="_images/radar_test_plot_12_0.png" src="_images/radar_test_plot_12_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -933,7 +913,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/radar_test_plot_12_0.png" src="_images/radar_test_plot_12_0.png" />
+<img alt="_images/radar_test_plot_13_0.png" src="_images/radar_test_plot_13_0.png" />
 </div>
 </div>
 <p><strong><em>Method 2:</em> By creating function</strong></p>
@@ -982,7 +962,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/radar_test_plot_15_0.png" src="_images/radar_test_plot_15_0.png" />
+<img alt="_images/radar_test_plot_16_0.png" src="_images/radar_test_plot_16_0.png" />
 </div>
 </div>
 <p>**<em>Method 3:</em> **</p>
@@ -1006,9 +986,10 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/radar_test_plot_17_0.png" src="_images/radar_test_plot_17_0.png" />
+<img alt="_images/radar_test_plot_18_0.png" src="_images/radar_test_plot_18_0.png" />
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1037,17 +1018,17 @@ Attributes:
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="IMD_radar_data_pyscancf.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="GPM_IMD_MATCH-Copy1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">How to handle IMD radar data efficiently?</p>
+            <p class="prev-next-title">Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="GPM_IMD_MATCH-Copy1.html" title="next page">
+    <a class='right-next' id="next-link" href="mymarkdown.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating a function to correct timestamps of GPM data and to mask the data w.r.t IMD data</p>
+        <p class="prev-next-title">Here’s my sample title</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
