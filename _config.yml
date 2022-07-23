@@ -1,0 +1,6 @@
+# In _config.yml
+title: Handlind IMD data
+author: Syed Hamid Ali
+logo: logo.png
+execute:
+  execute_notebooks: force

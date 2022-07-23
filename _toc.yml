@@ -1,0 +1,6 @@
+# In _toc.yml
+format: jb-book
+root: intro
+chapters:
+- file: notebooks
+- file: mymarkdown
