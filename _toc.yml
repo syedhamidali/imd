@@ -2,5 +2,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: notebooks
+- file: IMD_radar_data_pyscancf
+- file: GPM_IMD_MATCH-Copy1
 - file: mymarkdown
